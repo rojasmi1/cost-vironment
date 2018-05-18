@@ -1,0 +1,47 @@
+    .header-logo {
+        animation: header-logo-spin infinite 20s linear;
+        height: 80px;
+    }
+
+    .header {
+        background-color: #222;
+        height: 180px;
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
+
+    .header-title {
+        font-size: 1.5em;
+    }
+
+    .navBar {
+        list-style: none;
+        display: flex;
+        align-content: space-between;
+        justify-content: space-between;
+        width: 150px;
+        height: 22px;
+    }
+
+    .navBar .link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        transition: all 0.5s;
+    }
+
+
+    .navBar .link:hover {
+        color: rgb(90, 143, 240);
+        font-size: 22px;
+    }
+
+    @keyframes header-logo-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }

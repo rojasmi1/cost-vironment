@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import DefaultLayout from "./layout/defaultLayout";
+import Home from "./containers/home";
+import About from "./containers/about";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <DefaultLayout exact path="/" component={Home} />
+      <DefaultLayout path="/about" component={About} />
+    </div>
+  </Router>
+);
 
 export default App;
