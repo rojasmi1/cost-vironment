@@ -1,7 +1,3 @@
-    .header-logo {
-        animation: header-logo-spin infinite 20s linear;
-        height: 80px;
-    }
 
     .header {
         background-color: #222;
@@ -10,12 +6,17 @@
         color: white;
         text-align: center;
     }
+    
+    .header__logo {
+        animation: header-logo-spin infinite 20s linear;
+        height: 80px;
+    }
 
-    .header-title {
+    .header__title {
         font-size: 1.5em;
     }
 
-    .navBar {
+    .header__navbar {
         list-style: none;
         display: flex;
         align-content: space-between;
@@ -24,7 +25,7 @@
         height: 22px;
     }
 
-    .navBar .link {
+    .header__link {
         color: #fff;
         text-decoration: none;
         font-size: 20px;
@@ -32,7 +33,7 @@
     }
 
 
-    .navBar .link:hover {
+    .header__link:hover {
         color: rgb(90, 143, 240);
         font-size: 22px;
     }

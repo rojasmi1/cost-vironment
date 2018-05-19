@@ -6,16 +6,16 @@ import "./header.css";
 
 const Header = () => (
   <header className="header">
-    <ul className="navBar">
+    <ul className="header__navbar">
       <li>
-        <Link className="link" to="/">Home</Link>
+        <Link className="header__link" to="/">Home</Link>
       </li>
       <li>
-        <Link className="link" to="/about">About</Link>
+        <Link className="header__link" to="/about">About</Link>
       </li>
     </ul>
-    <img src={logo} className="header-logo" alt="logo" />
-    <h1 className="header-title">Welcome to Cost-vironment</h1>
+    <img src={logo} className="header__logo" alt="logo" />
+    <h1 className="header__title">Welcome to Cost-vironment</h1>
   </header>
 );
 
