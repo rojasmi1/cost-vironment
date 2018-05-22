@@ -12,16 +12,12 @@
         height: 80px;
     }
 
-    .header__title {
-        font-size: 1.5em;
-    }
-
     .header__navbar {
         list-style: none;
         display: flex;
         align-content: space-between;
         justify-content: space-between;
-        width: 150px;
+        width: 230px;
         height: 22px;
     }
 

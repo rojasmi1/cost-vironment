@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import "./home.css";
-import { API_CONFIG } from '../../constants';
 
 class Home extends Component {
+
   render() {
     return (
-      <div className="home">
-          This is the home page!
-      </div>
+      <section className="home">
+        <h1>Welcome to CostVironment!</h1>
+        <p>
+          This is the CostVironment's home page. Please select from the navbar
+          menu which fooprint you want to consult.
+        </p>
+      </section>
     );
   }
 }
 
 export default Home;
-
-

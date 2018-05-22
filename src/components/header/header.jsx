@@ -11,11 +11,13 @@ const Header = () => (
         <Link className="header__link" to="/">Home</Link>
       </li>
       <li>
+        <Link className="header__link" to="/automobile">Automobile</Link>
+      </li>
+      <li>
         <Link className="header__link" to="/about">About</Link>
       </li>
     </ul>
     <img src={logo} className="header__logo" alt="logo" />
-    <h1 className="header__title">Welcome to Cost-vironment</h1>
   </header>
 );
 
