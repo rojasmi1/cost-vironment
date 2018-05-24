@@ -20,7 +20,7 @@ class AutomobileFootprint extends Component {
       isLoading: false
     };
 
-    this.loadTestData = this.loadTestData.bind(this);
+    this.loadViewData = this.loadViewData.bind(this);
   }
 
   componentDidMount() {}
@@ -29,15 +29,11 @@ class AutomobileFootprint extends Component {
     let footprintResult;
     if (!this.state.isLoading) {
       footprintResult = (
-        <div style={flexLayout}>
-          <AutomobileForm sendData={this.loadTestData} />
-          <br />
           <AutomobileResults {...this.state.results} />
-        </div>
       );
     } else {
       footprintResult = (
-        <div style={{ padding: "50px", ...flexLayout }}>
+        <div>
           <Spinner name="chasing-dots" color="steelblue" className="automobileFootprint__spinner" />
         </div>
       );
@@ -50,27 +46,22 @@ class AutomobileFootprint extends Component {
           Provide all the relevant information according to your automobile,
           then the yearly environment cost will be shown bellow.
         </p>
-        <div>{footprintResult}</div>
+        <div style={flexLayout}>
+          <AutomobileForm sendData={this.loadViewData} />
+          <br />
+          {footprintResult}
+        </div>
       </section>
     );
   }
 
-  async loadTestData(automobile) {
+  async loadViewData(automobile) {
     this.setState({ isLoading: true });
     let url = new URL(
       `${API_CONFIG.BASE_URL}/automobiles.json?key=${API_CONFIG.KEY}`
     );
 
-    Object.keys(automobile).forEach(key =>
-      url.searchParams.append(key, automobile[key])
-    );
-
-    const response = await fetch(url, {
-      qs: automobile,
-      method: "POST",
-      headers: { "Content-Type": "application/json" }
-    });
-    const data = await response.json();
+    const data = await this.requestData(url, automobile);
     const { co2_emission: co2Emission, carbon } = data.decisions;
     this.setState({
       isLoading: false,
@@ -79,6 +70,22 @@ class AutomobileFootprint extends Component {
         carbon
       }
     });
+  }
+
+  async requestData(url, automobile) {
+    
+    // Build params
+    Object.keys(automobile).forEach(key =>
+      url.searchParams.append(key, automobile[key])
+    );
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    });
+    const data = await response.json();
+
+    return data;
   }
 }
 

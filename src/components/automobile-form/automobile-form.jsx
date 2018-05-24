@@ -14,6 +14,7 @@ class AutomobileForm extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.sendData = this.sendData.bind(this);
+    this.isFilledOut = this.isFilledOut.bind(this);
   }
 
   handleInputChange(event) {
@@ -30,6 +31,10 @@ class AutomobileForm extends React.Component {
     event.preventDefault();
     const { make, model, year, annualFuelUse: annual_fuel_use, annualDistance: annual_distance } = this.state;
     this.props.sendData({make, model, year, annual_fuel_use, annual_distance});
+  }
+
+  isFilledOut() {
+    return (this.state.make && this.state.model && this.state.year);
   }
 
   render() {
@@ -84,7 +89,7 @@ class AutomobileForm extends React.Component {
             onChange={this.handleInputChange}
           />
         </label>
-        <button className="automobileForm__submit" onClick={this.sendData}>
+        <button className="automobileForm__submit" disabled={!this.isFilledOut()} onClick={this.sendData}>
           Get Data!
         </button>
       </form>
