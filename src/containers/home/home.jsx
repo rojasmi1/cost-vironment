@@ -9,7 +9,7 @@ class Home extends Component {
         <h1>Welcome to CostVironment!</h1>
         <p>
           This is the CostVironment's home page. Please select from the navbar
-          menu which fooprint you want to consult.
+          menu which footprint you want to consult.
         </p>
       </section>
     );

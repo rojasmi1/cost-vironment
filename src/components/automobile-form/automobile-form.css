@@ -1,0 +1,9 @@
+
+    .automobileForm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .automobileForm__submit {
+        margin: 10px 0;
+    }

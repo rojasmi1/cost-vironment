@@ -1,0 +1,13 @@
+
+    .automobileResults {
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        background-color: #666;
+        height: 50px;
+        width: 20vw;
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+    }

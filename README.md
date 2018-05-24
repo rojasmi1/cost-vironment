@@ -1,6 +1,6 @@
 # Cost Environment App
 
-This is a small app the shows you how much you lifestyle costs to the environment based on varios activities performed by people during the year, i.e. Automobile usage, pets, lodging, computation, diet, etc. In order to calculate the cost for each activity it uses the [/ECON Rest API](http://www.climatechangecosts.com/docs/index.html).
+This is a small app the shows you how much you lifestyle costs to the environment based on various activities performed by people during the year, i.e. Automobile usage, pets, lodging, computation, diet, etc. In order to calculate the environment footprint for each activity it uses the [/Brighther Planet CM1 Rest API](http://impact.brighterplanet.com/).
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
